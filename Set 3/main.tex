@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[legalpaper, portrait, margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+
+\title{CS 156a Set 3}
+\author{Cason Shepard}
+\date\today
+
+\begin{document}
+
+\maketitle
+
+\section*{problem 1}
+Given $M = 1$:
+\begin{center}
+    $0.03 \leq 2(1)e^{-2(0.05)^2N}$\\
+    $ln(0.015) \leq -2(0.05)^2N$\\
+    $2.099 \geq 0.05^2N$\\
+    $839.94 \geq N$\\
+    $\approx 1000$
+\end{center}
+\textbf{The answer is [b]}
+
+\section*{problem 2}
+Given $M = 10$:
+\begin{center}
+    $0.03 \leq 2(10)e^{-2(0.05)^2N}$\\
+    $ln(0.0015) \leq -2(0.05)^2N$\\
+    $3.25 \geq 0.05^2N$\\
+    $1300 \geq N$\\
+    $\approx 1500$
+\end{center}
+\textbf{The answer is [c]}
+
+\section*{problem 3}
+Given $M = 100$:
+\begin{center}
+    $0.03 \leq 2(100)e^{-2(0.05)^2N}$\\
+    $ln(0.00015) \leq -2(0.05)^2N$\\
+    $4.4 \geq 0.05^2N$\\
+    $1761 \geq N$\\
+    $\approx 2000$
+\end{center}
+\textbf{The answer is [d]}
+
+\section*{problem 4}
+We are looking for the least number of points in a 3D space that cannot be shattered by a plane. In the case of 4 points, there is no configuration that is not shattered by a plane, thus $k > 4$. In this case, 5 points will work. If 4 of the 5 points are constructed in a tetrahedron formation, with the final point located somewhere outside, we can guarantee that the outlier point will always be included when we isolate a side of the tetrahedron. Since this point cannot be avoided for the given side, these 5 points are not able to be shattered. \\\\
+\textbf{The answer is [b]}
+
+\section*{problem 5}
+In Lecture 6, we proved that $m_H(N)$ is polynomial. Thus, the following options must be polynomial for them to be considered valid.
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{As shown on Lecture 5 Slide 18, this is valid for positive rays.}
+    \item \textbf{This is equivalent to $\frac{1}{2}N^2 + \frac{1}{2}N + 1$, thus, by Lecture 5 Slide 18, is valid for positive intervals}
+    \item By the proof on Lecture 6 Slide 11, the max power of this function can be simplified to $N^{\sqrt{N}}$. This is not polynomial, so it is not valid.
+    \item This function is not polynomial, so it is not valid.
+    \item \textbf{As shown on Lecture 5 Slide 18, this is valid for convex sets.}
+\end{enumerate}
+\textbf{The answer is [b]}
+
+\section*{problem 6}
+The smallest break point for this hypothesis set is 5. This is because there is no way to chose 2 intervals of +1 that split up the points as follows: \{+1, -1, +1, -1, +1\} This is the case that is left out, and is thus shattered. It would require the use of 3 intervals of +1 in order to split up the points like this, which we are unable to do by the specifications of the hypothesis. \\ \\
+\textbf{The answer is [c]}
+
+\section*{problem 7}
+We must consider the arrangement of the intervals. If they are overlapping, the max configurations of the points can be expressed as ${N+1 \choose 2}$. If they are non-overlapping, the max configurations of the points can be expressed as ${N+1 \choose 4}$. The final case (in which none of the points are affected by the intervals selected) results in the additional 1. Thus, the expression becomes: 
+\begin{center}
+    $m_H(N) = {N+1 \choose 2} + {N+1 \choose 4} + 1$
+\end{center}
+\textbf{The answer is [c]}
+
+\section*{problem 8} 
+For each interval in M, we have 2 points. This gives us 2M points that can be correctly classified by M intervals. However, adding one more point makes this impossible to correctly classify. Thus, for M intervals, $2M + 1$ points is the break point.\\ \\
+\textbf{The answer is [d]}
+
+\section*{problem 9}
+In practice, I was getting conflicting answers. I was unable to shatter the 9 point set, but 1 and 3 were easy to shatter.\\\\
+\textbf{The answer is [c or d]}
+
+\section*{problem 10}
+This problem is similar to the 1-interval problem. We have two points that represent the starting intervals. Using concentric circles, we know that these intervals will be overlapping. Thus, like problem 7, we will have $m_H(N) = {N+1 \choose 2} + 1$.\\\\
+\textbf{The answer is [b]}
+
+\end{document}
